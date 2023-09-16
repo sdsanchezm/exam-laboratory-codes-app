@@ -61,4 +61,23 @@ App created to make easier the process of consult specific lab-exams reference c
 - processingPlace
 
 
+### EF Libs and packages
+
+- EF `dotnet add package Microsoft.EntityFrameworkCore --version 7.0.3`
+    - `dotnet tool install --global dotnet-ef --version 7.0.3`
+
+- EF Relational
+    - `dotnet add package Microsoft.EntityFrameworkCore.Relational --version 7.0.3`
+
+- EF SQL Server support
+    - `dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.3`
+
+- EF design
+    - `dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.3`
+
+- Create Migrtions
+    - `dotnet ef migrations add InitialCreate`
+
+- apply migrations to Database
+    - `dotnet ef database update`
 

@@ -3,11 +3,11 @@
     public class Labexam
     {
 
-        public Guid examId { get; set; }
-        public string ExamNumber { get; set; } = "";
+        public Guid ExamId { get; set; }
+        public string ExamNumber { get; set; } = "N00";
         public string ExamName { get; set; } = "";
         public string CommonName { get; set; } = "";
-        public bool FastingRequired { get; set; }
+        public bool FastingRequired { get; set; } = false;
         public string PreparationDescription { get; set; } = "";
         public string ObservationForLaboratory { get; set; } = "";
         public string ExamPlace { get; set; } = "";
