@@ -6,7 +6,7 @@ namespace exam_laboratory_codes_app.Data
     public class LabexamContext : DbContext
     {
 
-        public DbSet<Labexam> labexams { get; set; }
+        public DbSet<Labexam> Labexams { get; set; }
 
         public LabexamContext(DbContextOptions<LabexamContext> options) : base(options) { }
 

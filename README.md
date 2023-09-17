@@ -81,3 +81,17 @@ App created to make easier the process of consult specific lab-exams reference c
 - apply migrations to Database
     - `dotnet ef database update`
 
+
+
+## Project 
+
+- clone
+- `dotnet restore`
+- `dotnet build`
+- `dotnet ef migrations add InitialCreate1`
+- Update the stringConnection (in appsettings.json or Program.cs)
+- `dotnet ef database update`
+- `dotnet run`
+- endpoint: `{host}/api/LabExam`
+
+
