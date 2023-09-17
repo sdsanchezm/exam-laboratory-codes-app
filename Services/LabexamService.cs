@@ -14,7 +14,8 @@ namespace exam_laboratory_codes_app.Services
         
         public async Task Delete(Guid id)
         {
-            var exam = await _dbContext.FindAsync<Labexam>(id);
+            var exam = _dbContext.Find<Labexam>(id);
+
             if (exam != null)
             {
                 _dbContext.Remove(exam);

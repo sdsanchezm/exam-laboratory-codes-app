@@ -32,5 +32,12 @@ namespace exam_laboratory_codes_app.Controllers
             _labexamServiceLocal.Update(id, le);
             return Ok();
         }
+
+        [HttpDelete]
+        public IActionResult Delete(Guid id)
+        {
+            _labexamServiceLocal.Delete(id);
+            return Ok();
+        }
     }
 }
