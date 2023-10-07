@@ -2,7 +2,6 @@
 {
     public class Labexam
     {
-
         public Guid ExamId { get; set; }
         public string ExamNumber { get; set; } = "N00";
         public string ExamName { get; set; } = "";
@@ -21,7 +20,6 @@
         public string TimeResults { get; set; } = "";
         public string SampleTechnic { get; set; } = "";
         public string ProcessingPlace { get; set; } = "";
-
 
     }
 }

@@ -34,6 +34,17 @@ namespace exam_laboratory_codes_app.Services
             await _dbContext.SaveChangesAsync();
         }
 
+        public IEnumerable<Labexam> SearchKeyword(string q)
+        {
+            var qr = _dbContext.Labexams
+                .Where(exam =>
+                    exam.ExamName.Contains(q) || 
+                    exam.CommonName.Contains(q)
+                ).ToList();
+
+            return qr;
+        }
+
         public async Task Update(Guid id, Labexam le)
         {
             var examInDb = _dbContext.Labexams.Find(id);
@@ -73,5 +84,6 @@ namespace exam_laboratory_codes_app.Services
         Task Save(Labexam le);
         Task Update(Guid id, Labexam le);
         Task Delete(Guid id);
+        IEnumerable<Labexam> SearchKeyword(string q);
     }
 }

@@ -19,6 +19,28 @@ namespace exam_laboratory_codes_app.Controllers
             return Ok(_labexamServiceLocal.GetAll());
         }
 
+        [HttpGet("search")]
+        public IActionResult SearchKeyword([FromQuery(Name = "q")] string q)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(q))
+                {
+                    return BadRequest("String is required...");
+                }
+
+                var result = _labexamServiceLocal.SearchKeyword(q);
+
+                //var result = $"{q}>xD";
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error: {ex.Message}");
+            }
+        }
+
         [HttpPost]
         public IActionResult Post([FromBody] Labexam labexamNew)
         {
