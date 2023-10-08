@@ -33,6 +33,17 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// CORS configuration here
+// allowing requests from all origins
+app.UseCors(builder => builder
+    //.WithOrigins("http://localhost.com:5116") 
+    .AllowAnyOrigin()
+    //.WithHeaders("Content-Type", "Authorization")
+    .AllowAnyHeader()
+    //.WithMethods("GET", "POST")
+    .AllowAnyMethod()
+);
+
 app.UseAuthorization();
 
 app.MapControllers();
