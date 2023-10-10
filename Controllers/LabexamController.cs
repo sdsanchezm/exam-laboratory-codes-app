@@ -19,6 +19,25 @@ namespace exam_laboratory_codes_app.Controllers
             return Ok(_labexamServiceLocal.GetAll());
         }
 
+        [HttpGet("{examId}")]
+        //[ProducesResponseType(200, Type = typeof(ExamId))]
+        public IActionResult GetExam(Guid examId)
+        {
+            if (!_labexamServiceLocal.ExamExists(examId))
+            {
+                return NotFound();
+            }
+
+            var e = _labexamServiceLocal.GetExam(examId);
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return Ok(e);
+        }
+
         [HttpGet("search")]
         public IActionResult SearchKeyword([FromQuery(Name = "q")] string q)
         {

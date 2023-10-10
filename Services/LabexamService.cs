@@ -23,9 +23,21 @@ namespace exam_laboratory_codes_app.Services
             }
         }
 
+        public bool ExamExists(Guid id)
+        {
+            return _dbContext.Labexams.Any<Labexam>(e => e.ExamId == id);
+        }
+
         public IEnumerable<Labexam> GetAll()
         {
             return _dbContext.Labexams;
+        }
+
+        public Labexam GetExam(Guid exam_id)
+        {
+            var e = _dbContext.Labexams.Where(p => p.ExamId == exam_id).FirstOrDefault();
+
+            return e;
         }
 
         public async Task Save(Labexam le)
@@ -81,6 +93,8 @@ namespace exam_laboratory_codes_app.Services
     public interface ILabexamService
     {
         IEnumerable<Labexam> GetAll();
+        Labexam GetExam(Guid id);
+        bool ExamExists(Guid id);
         Task Save(Labexam le);
         Task Update(Guid id, Labexam le);
         Task Delete(Guid id);
