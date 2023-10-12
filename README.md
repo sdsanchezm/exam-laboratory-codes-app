@@ -81,6 +81,28 @@
 - processingPlace
 
 
+#### Technical Details
 
+- EF `dotnet add package Microsoft.EntityFrameworkCore --version 7.0.3`
+    - `dotnet tool install --global dotnet-ef --version 7.0.3`
+- EF Relational
+    - `dotnet add package Microsoft.EntityFrameworkCore.Relational --version 7.0.3`
+- EF SQL Server support
+    - `dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.3`
+- EF design
+    - `dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.3`
+- Create Migrtions
+    - `dotnet ef migrations add InitialCreate`
+- apply migrations to Database
+    - `dotnet ef database update`
+
+#### Project 
+- clone
+    - `dotnet restore`
+    - `dotnet build`
+    - `dotnet ef migrations add InitialCreate1`
+- Update the stringConnection (in appsettings.json or Program.cs)
+    - `dotnet ef database update`
+    - `dotnet run`
 
 
